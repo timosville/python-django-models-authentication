@@ -7,8 +7,8 @@
 {% block content %}
   <div class="row">
     <div class="col-sm-12">
-      <div class="jumbotron jumbotron-cover-image" 
-        style='background: #000 url("https://picsum.photos/id/{{object.id}}/800/400") center center; background-size: cover; padding: 8rem;'> 
+      <div class="jumbotron jumbotron-cover-image"
+        style='background: #000 url("https://picsum.photos/id/{{object.id}}/800/400") center center; background-size: cover; padding: 8rem;'>
       </div>
     </div>
   </div>
@@ -17,11 +17,9 @@
         <h1 class="post-title py-2">{{object.title}}</h1>
         <h4 class="post-subtitle"><a href="{{object.author.get_absolute_url}}" class="">{{object.author.username}}</a></h4>
         <h4 class="post-subtitle">{{object.postdate}}</h4>
-        {% comment %}
         <div class="tags">
-        {% include 'mainapp/snippet_tag_labels.html' with tags=object.tags.all %}  
+        {% include 'mainapp/snippet_tag_labels.html' with tags=object.tags.all %}
         </div>
-        {% endcomment %}
     </div><!-- /.col-lg-8 -->
   </div>
   <div class="row py-3">
@@ -35,9 +33,9 @@
           <div class="card-body py-4">
             <p class="card-author-bio">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
             <a href="{{object.author.get_absolute_url}}" class=""><div class="card-author-link">Read More</div></a>
-          </div>   
+          </div>
 
       </div>
     </aside>
-  </div>       
+  </div>
 {% endblock %}}
