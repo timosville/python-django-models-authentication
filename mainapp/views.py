@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from datetime import datetime
+
 from django.conf import settings
 from django.http import Http404
+from django.shortcuts import get_object_or_404, render
 
-from datetime import datetime
+from .models import BlogPost
+
 ALL_POSTS = [
  {
     'id':0,
@@ -23,7 +26,7 @@ ALL_POSTS = [
 ]
 
 def index(request):
-    posts = ALL_POSTS
+    posts = BlogPost.objects.all()
     return render(request, 'mainapp/index.html', {'posts':posts})
 
 def post(request, id):
