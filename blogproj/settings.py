@@ -30,9 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# SILENCED_SYSTEM_CHECKS should be set to an empty list once the 
+# SILENCED_SYSTEM_CHECKS should be set to an empty list once the
 # custom user model is setup. This is only added to support testing.
-SILENCED_SYSTEM_CHECKS = ['fields.E304'] 
+SILENCED_SYSTEM_CHECKS = ['fields.E304']
 
 # Application definition
 
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'mainapp',
 ]
+
+INSTALLED_APPS += ['users',]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
