@@ -36,4 +36,4 @@ def post(request, id):
 def tag_posts(request, name):
     name = name.lower()
     title = "Posts about {}".format(name)
-    return render(request, 'mainapp/filtered_post_list.html')
+    return render(request, 'mainapp/filtered_post_list.html', {'title': title})
