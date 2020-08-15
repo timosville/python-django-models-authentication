@@ -21,3 +21,6 @@ class Tag(models.Model):
 
     def clean(self):
         self.name = self.name.lower()
+
+    def __str__(self):
+        return self.name
