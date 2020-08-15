@@ -30,8 +30,5 @@ def index(request):
     return render(request, 'mainapp/index.html', {'posts':posts})
 
 def post(request, id):
-    try:
-        post = ALL_POSTS[id]
-    except IndexError:
-        raise Http404("Post does not exist")
+    post = get_object_or_404(BlogPost, pk=id)
     return render(request, 'mainapp/post.html', {'object': post})
