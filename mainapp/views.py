@@ -32,3 +32,6 @@ def index(request):
 def post(request, id):
     post = get_object_or_404(BlogPost, pk=id)
     return render(request, 'mainapp/post.html', {'object': post})
+
+def tag_posts(request, name):
+    return render(request, 'mainapp/filtered_post_list.html')
