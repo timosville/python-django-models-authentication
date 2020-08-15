@@ -10,5 +10,5 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('tag/<str:name>', views.tag_posts, name='tag_posts')
+    path('tag/<str:name>', views.tag_posts, name='tag_posts'),
 ]
