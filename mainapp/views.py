@@ -36,4 +36,6 @@ def post(request, id):
 def tag_posts(request, name):
     name = name.lower()
     title = "Posts about {}".format(name)
-    return render(request, 'mainapp/filtered_post_list.html', {'title': title})
+    tag = get_object_or_404(Tag, name=name)
+    posts = BlogPost.objects.filter(tags=tag)
+    return render(request, 'mainapp/filtered_post_list.html', {'title': title, 'posts': posts})
